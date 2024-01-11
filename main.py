@@ -90,9 +90,18 @@ def calculator():
         print("False number or operator, please try again")
     print("Result: ", outcome)
 # For third task
+
 def thirdTask():
     print("You have chosen third Task!")
-    
+    print("It is head or tails!")
+    flip_coin = input("You want to flip the coin? (Yes/Not): ")
+    if flip_coin == "Yes" and "yes":
+        print("The coin is flipped! ")
+        head_or_tails = ("head!", "tail!")
+        from random import sample 
+        print("The coin shows", sample(head_or_tails, k=1))
+    else:
+        print("please wait! ")
 right_button()
 
 
