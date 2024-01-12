@@ -5,8 +5,19 @@ name = input("What is your name? ")
 print("You Name is " + name)
 lastName = input("What is your lastname? ")
 print("You lastname is " + lastName)
-age = input("what is your age? ")
-print("You are " + age + " years old.")
+# For only using numbers in age verification
+def age_verification():
+    try:
+      age = int(input("what is your age? "))
+      print("You are ", age, " years old.")
+    # Code for verification if you are 18
+      if age >= 18:
+          print("You are verified now!")
+      else:
+          print("You are unfortunatly a minor")
+    except ValueError: 
+        print("Please use only numbers for age!")
+age_verification()
 #For checking if its true or not
 print("Are these informations right?")
 def right_button():
