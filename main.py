@@ -7,6 +7,7 @@ lastName = input("What is your lastname? ")
 print("You lastname is " + lastName)
 # For only using numbers in age verification
 def age_verification():
+    global age
     try:
       age = int(input("what is your age? "))
       print("You are ", age, " years old.")
@@ -22,15 +23,18 @@ age_verification()
 print("Are these informations right?")
 def right_button():
     reply = input("Are you sure? (Yes/No): ")
-    #code for what comes next
+    # if its yes accept it
     if reply == 'Yes':
         print("Accepted!")
+        # summarize the information with an array
         array1 = [name, lastName, age]
         print(array1)
         print("What can i do for you?")
         print("1.")
         print("2.")
         print("3.")
+        print("4.")
+        # select the task
         numberChoice = input("Enter the number of your desired task.")
         if numberChoice == "1":
             firstTask()
@@ -38,9 +42,10 @@ def right_button():
             secondTask()
         elif numberChoice == "3":
             thirdTask()
-            
+        elif numberChoice == "4":
+            fourthTask()    
         else:
-            print("Please write a Number of 1,2 or 3!")
+            print("Please write a Number of 1,2,3 or 4!")
     else:
         print("Not Accepted, try again")
 # The first Task
@@ -79,11 +84,12 @@ def ropasc():
 
     else: 
         print("please write a right number")
-# For secong task
+# For second task
 def secondTask():
     print("You have chosen second Task!")
     print("This is a calculator")
     calculator()
+
 def calculator():
     firstNumber = input("What is your first number?: ")
     secondNumber = input("What is your second number?: ")
@@ -113,6 +119,22 @@ def thirdTask():
         print("The coin shows", sample(head_or_tails, k=1))
     else:
         print("please wait! ")
+
+def fourthTask():
+    import string
+    import secrets
+    print("You have chosen fourth Task!")
+    print("It's a Password Generator!")
+    write_number = input("How long should the password be? (Please write a number of 15-20) ")
+    if write_number > 20 or write_number < 15:
+            print("Please write number of 15-20")
+    else:
+            digits_and_letters = string.ascii_uppercase + string.ascii_lowercase + string.digits
+            random_digit = [secrets.choice(digits_and_letters) for i in range(write_number)]
+            rndm_string_digits = "".join(random_digit)
+            print(rndm_string_digits)
+    
+        
 right_button()
 
 
